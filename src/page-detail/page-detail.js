@@ -37,7 +37,7 @@ class PageDetail {
         // Seite zur Anzeige bringen
         let pageDom = this._processTemplate(html);
 
-        this._app.setPageTitle(`Segelschiff ${this._data.name}`, {isSubPage: true});
+        this._app.setPageTitle(`${this._data.name}`, {isSubPage: true});
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
@@ -55,9 +55,9 @@ class PageDetail {
         // Platzhalter mit den eingelesenen Daten ersetzen
         html = html.replace(/{IMG}/g, this._data.img);
         html = html.replace(/{NAME}/g, this._data.name);
-        html = html.replace(/{TYP}/g, this._data.typ);
-        html = html.replace(/{STAPELLAUF}/g, this._data.stapellauf);
-        html = html.replace(/{VERBLEIB}/g, this._data.verbleib);
+        html = html.replace(/{KLASSE}/g, this._data.klasse);
+        html = html.replace(/{GEWICHT}/g, this._data.gewicht);
+        html = html.replace(/{GRÖSSE}/g, this._data.grösse);
         html = html.replace(/{LINK}/g, this._data.link);
 
         // HTML-Template in echte DOM-Objekte umwandeln, damit wir es mit den
