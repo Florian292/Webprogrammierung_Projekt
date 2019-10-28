@@ -5,6 +5,9 @@
         <title>Lösung: Meine App</title>
         <link rel="shortcut icon" href="favicon.png" />
 
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+
         <!-- Klasse App: Steuert die gesamte Anwendung -->
         <script src="app.js"></script>
         <link rel="stylesheet" href="app.css" />
@@ -39,7 +42,7 @@
                     klass: PageNotFound,
                 }];
 
-                let app = new App("Segelfreunde", pages);
+                let app = new App("Tierfakten", pages);
                 app.run();
             });
         </script>
@@ -96,25 +99,5 @@
         <main id="app-main-area">
             Inhalt des Hauptbereichs
         </main>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBuGbXAmDXxdy1FYuyyRihscRUeOOfMvmo",
-    authDomain: "irgendwas-mit-tieren-webprog.firebaseapp.com",
-    databaseURL: "https://irgendwas-mit-tieren-webprog.firebaseio.com",
-    projectId: "irgendwas-mit-tieren-webprog",
-    storageBucket: "irgendwas-mit-tieren-webprog.appspot.com",
-    messagingSenderId: "427713729504",
-    appId: "1:427713729504:web:1df2ebfa8f0a734dad1185"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
     </body>
 </html>

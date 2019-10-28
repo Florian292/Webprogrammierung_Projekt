@@ -32,7 +32,7 @@ class PageOverview {
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
 
-        this._renderBoatTiles(pageDom);
+        await this._renderAnimalTiles(pageDom);
 
         this._app.setPageTitle("Startseite");
         this._app.setPageCss(css);
@@ -47,15 +47,23 @@ class PageOverview {
      * @param {HTMLElement} pageDom Wurzelelement der eingelesenen HTML-Datei
      * mit den HTML-Templates dieser Seite.
      */
-    _renderBoatTiles(pageDom) {
+    async _renderAnimalTiles(pageDom) {
         let mainElement = pageDom.querySelector("main");
         let templateElement = pageDom.querySelector("#template-tile");
 
-        this._app.database.getAllRecords().forEach(boat => {
+        let animals = await this._app.database.getAllRecords();
+
+        animals.forEach(animal => {
+            let imageDataURI = "animals/dummy.png";
+
+            if (animal.imagemime && animal.image64) {
+              imageDataURI = `data:${animal.imagemime};base64,${animal.image64}`;
+            }
+
             let html = templateElement.innerHTML;
-            html = html.replace("{HREF}", `#/Detail/${boat.id}`);
-            html = html.replace("{IMG}", boat.img);
-            html = html.replace("{NAME}", boat.name);
+            html = html.replace("{HREF}", `#/Detail/${animal.id}`);
+            html = html.replace("{IMG}", imageDataURI);
+            html = html.replace("{NAME}", animal.name);
 
             mainElement.innerHTML += html;
         });

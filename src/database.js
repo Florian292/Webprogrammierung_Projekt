@@ -14,7 +14,22 @@ class Database {
      * Konstruktor.
      */
     constructor() {
-        this._data = [
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBuGbXAmDXxdy1FYuyyRihscRUeOOfMvmo",
+          authDomain: "irgendwas-mit-tieren-webprog.firebaseapp.com",
+          databaseURL: "https://irgendwas-mit-tieren-webprog.firebaseio.com",
+          projectId: "irgendwas-mit-tieren-webprog",
+          storageBucket: "irgendwas-mit-tieren-webprog.appspot.com",
+          messagingSenderId: "427713729504",
+          appId: "1:427713729504:web:da1fd0277ec757edad1185"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        this._db = firebase.firestore();
+        this._animals = this._db.collection("animals");
+
+        /*this._data = [
             {
                 id:          1,
                 img:        "animals/1.jpg",
@@ -88,7 +103,7 @@ class Database {
                 grösse:     "75cm",
                 link:       "https://de.wikipedia.org/wiki/Schulschiff_Deutschland",
             },
-        ];
+        ];*/
     }
 
     /**
@@ -98,16 +113,27 @@ class Database {
      * @param  {Number} id Datensatz-ID
      * @return {Object} Gefundener Datensatz
      */
-    getRecordById(id) {
-        id = parseInt(id);
-        return this._data.find(r => r.id === id);
+    async getRecordById(id) {
+        /*id = parseInt(id);
+        return this._animals.find(r => r.id === id);*/
+
+        let result = await this._animals.doc(id).get();
+        return result.data();
     }
 
     /**
      * Diese Methode gibt eine Liste mit allen Datensätzen zurück.
      * @return {Array} Liste aller Datensätze
      */
-    getAllRecords() {
-        return this._data;
+    async getAllRecords() {
+      let result = await this._animals.get();
+      let animals = [];
+
+      result.forEach(entry => {
+          let animal = entry.data();
+          animals.push(animal);
+      });
+
+      return animals;
     }
 }

@@ -11,7 +11,7 @@ class PageDetail {
     constructor(app) {
         this._app = app;
         this._recordId = -1;
-        this._data = null;
+        this._animals = null;
     }
 
     /**
@@ -20,7 +20,7 @@ class PageDetail {
     async show(matches) {
         // URL-Parameter auswerten
         this._recordId = matches[1];
-        this._data = this._app.database.getRecordById(this._recordId);
+        this._animals = this._app.database.getRecordById(this._recordId);
 
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-detail/page-detail.html");
@@ -37,7 +37,7 @@ class PageDetail {
         // Seite zur Anzeige bringen
         let pageDom = this._processTemplate(html);
 
-        this._app.setPageTitle(`${this._data.name}`, {isSubPage: true});
+        this._app.setPageTitle(`${this._animals.name}`, {isSubPage: true});
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
@@ -51,14 +51,16 @@ class PageDetail {
      * @param {HTMLElement} pageDom Wurzelelement der eingelesenen HTML-Datei
      * mit den HTML-Templates dieser Seite.
      */
-    _processTemplate(html) {
+     _processTemplate(html) {
+
         // Platzhalter mit den eingelesenen Daten ersetzen
-        html = html.replace(/{IMG}/g, this._data.img);
-        html = html.replace(/{NAME}/g, this._data.name);
+        html = html.replace(/{NAME}/g, this._animals.name);
+        /*html = html.replace(/{IMG}/g, this._data.img);
+
         html = html.replace(/{KLASSE}/g, this._data.klasse);
         html = html.replace(/{GEWICHT}/g, this._data.gewicht);
         html = html.replace(/{GRÖSSE}/g, this._data.grösse);
-        html = html.replace(/{LINK}/g, this._data.link);
+        html = html.replace(/{LINK}/g, this._data.link);*/
 
         // HTML-Template in echte DOM-Objekte umwandeln, damit wir es mit den
         // DOM-Methoden von JavaScript weiterbearbeiten können
@@ -78,6 +80,6 @@ class PageDetail {
      * Button aufgerufen wird.
      */
     _onShowMoreButtonClicked() {
-        alert(this._data.name);
+        alert(this._animals.name);
     }
 }
