@@ -1,47 +1,32 @@
+<html>
+<head>
+</head>
+<body>
 <header>
     <h1>Fakten zu Tieren</h1>
 </header>
 
 <main>
-  <form>
-  Name eingeben:<br>
-  <input type="text" name="name" value="">
-  <br>
-  Größe eingeben:<br>
-  <input type="text" name="groesse" value="">
-  <br>
-  Gewicht eingeben:<br>
-  <input type="text" name="gewicht" value="">
-  <br>
-  Klasse eingeben:<br>
-  <input type="text" name="klasse" value="">
-  <br>
-  1. Fakt eingeben:<br>
-  <input type="text" name="fakt1" value="">
-  <br>
-  2. Fakt eingeben:<br>
-  <input type="text" name="fakt2" value="">
-  <br>
-  3. Fakt eingeben:<br>
-  <input type="text" name="fakt3" value="">
-  <br>
-  4. Fakt eingeben:<br>
-  <input type="text" name="fakt4" value="">
-  <br>
-  5. Fakt eingeben:<br>
-  <input type="text" name="fakt5" value="">
-  <br>
-  jpeg-Bilddatei als base64 hochladen:<br>
-  <input type="text" name="image64" value="">
-  <br>
-  mp3-Sounddatei als base64 hochladen:<br>
-  <input type="text" name="image64" value="">
-  <br>
-  <input type="submit" value="Speichern">
 
+
+  <form name="TierAnlegen">
+    <label><span>Name eingeben: </span><input name="name" type="text" /><br>
+    <span>Größe eingeben: </span><input type="text" name="groesse" value=""><br>
+    <span>Gewicht eingeben: </span><input type="text" name="gewicht" value=""><br>
+    <span>Klasse eingeben: </span><input type="text" name="klasse" value=""><br>
+    <span>1. Fakt eingeben: </span><input type="text" name="fakt1" value=""><br>
+    <span>2. Fakt eingeben: </span><input type="text" name="fakt2" value=""><br>
+    <span>3. Fakt eingeben: </span><input type="text" name="fakt3" value=""><br>
+    <span>4. Fakt eingeben: </span><input type="text" name="fakt4" value=""><br>
+    <span>5. Fakt eingeben: </span><input type="text" name="fakt5" value=""><br>
+    <span>jpeg-Bilddatei als base64 hochladen: </span><input type="text" name="image64" value=""><br>
+    <span><input type="submit" value="Speichern"></span><br>
+    <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a></label>
 </form>
 
 </main>
+<br>
+
 
 
 <div id="template-tile">
@@ -52,3 +37,5 @@
         </a>
     </div>
 </div>
+</body>
+</html>

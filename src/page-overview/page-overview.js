@@ -75,11 +75,22 @@ class PageOverview {
     tierHinzufügen(event, database) {
       let newAnimal = {
         name: event.target.name.value,
+        groesse: event.target.groesse.value,
+        gewicht: event.target.gewicht.value,
+        klasse: event.target.klasse.value,
+        fakt1: event.target.fakt1.value,
+        fakt2: event.target.fakt2.value,
+        fakt3: event.target.fakt3.value,
+        fakt4: event.target.fakt4.value,
+        fakt5: event.target.fakt5.value,
+        image64: event.target.image64.value,
+        immagemime: "image/jpeg",
+        sound64: event.target.sound64.value,
+        soundmime:  "audio/mpeg",
 
       };
       database.saveNewAnimal(newAnimal);
-      alert('Hallo');
-      console.log(event.target.fakt1.value);
+      alert('Tier gespeichert');
       event.preventDefault();
 
     }
