@@ -1,7 +1,9 @@
 /**
  * Stylesheet zur Klasse PageOverview: Startseite der App
  */
-
+html {
+    background-image: url(background.jpg);
+}
 .tile {
     display: inline-block;
 

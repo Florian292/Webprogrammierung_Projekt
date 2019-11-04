@@ -131,6 +131,7 @@ class Database {
 
       result.forEach(entry => {
           let animal = entry.data();
+          animal.id = entry.id;
           animals.push(animal);
       });
 

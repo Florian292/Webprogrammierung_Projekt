@@ -20,7 +20,7 @@ class PageDetail {
     async show(matches) {
         // URL-Parameter auswerten
         this._recordId = matches[1];
-        this._animals = this._app.database.getRecordById(this._recordId);
+        this._animals = await this._app.database.getRecordById(this._recordId);
 
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-detail/page-detail.html");
@@ -35,7 +35,10 @@ class PageDetail {
         }
 
         // Seite zur Anzeige bringen
+        html = this._replaceVariables(html);
+        css = this._replaceVariables(css);
         let pageDom = this._processTemplate(html);
+
 
         this._app.setPageTitle(`${this._animals.name}`, {isSubPage: true});
         this._app.setPageCss(css);
@@ -43,6 +46,21 @@ class PageDetail {
         this._app.setPageContent(pageDom.querySelector("main"));
     }
 
+    _replaceVariables(text){
+        text = text.replace(/{NAME}/g, this._animals.name);
+        //text = text.replace(/{IMG}/g, this._animals.img);
+
+        text = text.replace(/{KLASSE}/g, this._animals.klasse);
+        text = text.replace(/{GEWICHT}/g, this._animals.gewicht);
+        text = text.replace(/{GRÖSSE}/g, this._animals.groesse);
+        text = text.replace(/{LINK}/g, this._animals.link);
+        text = text.replace(/{FAKT1}/g, this._animals.fakt1);
+        text = text.replace(/{FAKT2}/g, this._animals.fakt2);
+        text = text.replace(/{FAKT3}/g, this._animals.fakt3);
+        text = text.replace(/{FAKT4}/g, this._animals.fakt4);
+        text = text.replace(/{FAKT5}/g, this._animals.fakt5);
+        return text;
+    }
      /**
      * Hilfsmethode, welche den HTML-Code der eingelesenen HTML-Datei bearbeitet
      * und anhand der eingelesenen Daten ergänzt. Zusätzlich wird hier ein
@@ -52,16 +70,6 @@ class PageDetail {
      * mit den HTML-Templates dieser Seite.
      */
      _processTemplate(html) {
-
-        // Platzhalter mit den eingelesenen Daten ersetzen
-        html = html.replace(/{NAME}/g, this._animals.name);
-        /*html = html.replace(/{IMG}/g, this._data.img);
-
-        html = html.replace(/{KLASSE}/g, this._data.klasse);
-        html = html.replace(/{GEWICHT}/g, this._data.gewicht);
-        html = html.replace(/{GRÖSSE}/g, this._data.grösse);
-        html = html.replace(/{LINK}/g, this._data.link);*/
-
         // HTML-Template in echte DOM-Objekte umwandeln, damit wir es mit den
         // DOM-Methoden von JavaScript weiterbearbeiten können
         let pageDom = document.createElement("div");
@@ -80,6 +88,9 @@ class PageDetail {
      * Button aufgerufen wird.
      */
     _onShowMoreButtonClicked() {
-        alert(this._animals.name);
+        //alert(this._animals.name);
+        let soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+        let audio = new Audio(soundDataURI);
+        audio.play();
     }
 }
