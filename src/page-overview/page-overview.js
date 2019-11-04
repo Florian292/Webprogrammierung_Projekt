@@ -33,11 +33,14 @@ class PageOverview {
         pageDom.innerHTML = html;
 
         await this._renderAnimalTiles(pageDom);
+        let formElement = pageDom.querySelector('form');
+        formElement.addEventListener('submit', event => this.tierHinzufügen(event, this._app.database));
 
         this._app.setPageTitle("Startseite");
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
+
     }
 
     /**
@@ -67,5 +70,17 @@ class PageOverview {
 
             mainElement.innerHTML += html;
         });
+    }
+
+    tierHinzufügen(event, database) {
+      let newAnimal = {
+        name: event.target.name.value,
+
+      };
+      database.saveNewAnimal(newAnimal);
+      alert('Hallo');
+      console.log(event.target.fakt1.value);
+      event.preventDefault();
+
     }
 }

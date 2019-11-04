@@ -137,4 +137,9 @@ class Database {
 
       return animals;
     }
+    saveNewAnimal(newAnimal) {
+      return this._animals.add(newAnimal);
+    }
+
+
 }
