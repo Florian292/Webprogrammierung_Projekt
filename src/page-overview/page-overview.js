@@ -53,12 +53,12 @@ class PageOverview {
      * mit den HTML-Templates dieser Seite.
      */
     async _renderAnimalTiles(pageDom) {
-        let mainElement = pageDom.querySelector("main");
-        let templateElement = pageDom.querySelector("#template-tile");
+        let mainElement = pageDom.querySelector("main"); //Aufruf des main-Bereichs der HTML
+        let templateElement = pageDom.querySelector("#template-tile"); //Aufruf des template-tile-Bereichs der HTML
 
-        let animals = await this._app.database.getAllRecords();
-
-        animals.forEach(animal => {
+        let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
+        let alleTiere = ""; //Variable fuer gesamtes HTML der Schleife
+        animals.forEach(animal => { //Schleife als Aufruf der einzelnen Datensaetze
             let imageDataURI = "animals/dummy.png";
 
             if (animal.imagemime && animal.image64) {
@@ -70,8 +70,11 @@ class PageOverview {
             html = html.replace("{IMG}", imageDataURI);
             html = html.replace("{NAME}", animal.name);
 
-            mainElement.innerHTML += html;
+            alleTiere += html; //fortlaufende Informationen in HTML-Variable
         });
+
+        alleTiere += mainElement.innerHTML; //main-Bereich hinter template-tile-Bereich
+        mainElement.innerHTML = alleTiere; //einfuegen in Aufrufvariable
     }
 
     tierHinzufügen(event, database) {
