@@ -3,11 +3,12 @@
  */
 html {
     background-image: url(background.jpg);
-    display: inline-block;
 }
 form {
     position: relative;
+
 }
+
 .tile {
     display: inline-block;
 

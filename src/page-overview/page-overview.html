@@ -4,38 +4,42 @@
 <body>
 <header>
     <h1>Fakten zu Tieren</h1>
+
 </header>
+
 
 <main>
 
+<h2>Hier kannst du ein neues Tier anlegen: </h2>
 
   <form name="TierAnlegen">
-    <label><span>Name eingeben: </span><input name="name" type="text" /><br>
-    <span>Größe eingeben: </span><input type="text" name="groesse" value=""><br>
-    <span>Gewicht eingeben: </span><input type="text" name="gewicht" value=""><br>
-    <span>Klasse eingeben: </span><input type="text" name="klasse" value=""><br>
-    <span>1. Fakt eingeben: </span><input type="text" name="fakt1" value=""><br>
-    <span>2. Fakt eingeben: </span><input type="text" name="fakt2" value=""><br>
-    <span>3. Fakt eingeben: </span><input type="text" name="fakt3" value=""><br>
-    <span>4. Fakt eingeben: </span><input type="text" name="fakt4" value=""><br>
-    <span>5. Fakt eingeben: </span><input type="text" name="fakt5" value=""><br>
-    <span>jpeg-Bilddatei als base64 hochladen: </span><input type="text" name="image64" value=""><br>
+    <label><span>Name eingeben: </span><input name="name" type="text" required>
+    <span>Größe eingeben: </span><input type="text" name="groesse" value="" required>
+    <span>Gewicht eingeben: </span><input type="text" name="gewicht" value="" required><br>
+    <span>Klasse eingeben: </span><input type="text" name="klasse" value=""required>
+    <span>1. Fakt eingeben: </span><input type="text" name="fakt1" value=""required>
+    <span>2. Fakt eingeben: </span><input type="text" name="fakt2" value=""required><br>
+    <span>3. Fakt eingeben: </span><input type="text" name="fakt3" value=""required>
+    <span>4. Fakt eingeben: </span><input type="text" name="fakt4" value=""required>
+    <span>5. Fakt eingeben: </span><input type="text" name="fakt5" value=""required><br>
+    <span>jpeg-Bilddatei als base64 hochladen: </span><input type="text" name="image64" value=""required><br>
     <span><input type="submit" value="Speichern"></span><br>
     <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a></label>
 </form>
 
+
 </main>
 <br>
-
-
 
 <div id="template-tile">
     <div class="tile">
         <a href="{HREF}">
+          {NAME}
             <img src="{IMG}" alt="" />
-            {NAME}
         </a>
     </div>
 </div>
+
+
 </body>
 </html>

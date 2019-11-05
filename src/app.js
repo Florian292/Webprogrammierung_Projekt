@@ -43,10 +43,10 @@ class App {
      */
     run() {
         // Globale Event Listener registrieren
-        document.querySelector("header nav .toggle-menu a").addEventListener("click", this._toggleHamburgerMenu);
-        document.querySelector("header nav .go-back a").addEventListener("click", () => window.history.back());
+        //document.querySelector("header nav .toggle-menu a").addEventListener("click", this._toggleHamburgerMenu);
+        //document.querySelector("header nav .go-back a").addEventListener("click", () => window.history.back());
 
-        window.addEventListener("click", event => this._onLinkClicked(event));
+        //window.addEventListener("click", event => this._onLinkClicked(event));
         window.addEventListener("popstate", event => this._onHistoryChanged(event));
 
         // Erste Seite aufrufen
@@ -60,7 +60,7 @@ class App {
      *
      * @param {DOMEvent} event Abgefangenes Click-Event
      */
-    _toggleHamburgerMenu(event) {
+    /*_toggleHamburgerMenu(event) {
         // Hamburger-Menu ein- oder ausblenden
         let menu = document.querySelector("header nav .menu-right");
         if (!menu) return;
@@ -76,7 +76,7 @@ class App {
         if (event) {
             event.preventDefault();
         }
-    }
+    }*/
 
     /**
      * DOM Event Handler für angeklickte Links. Tatsächlich wird der Event
@@ -100,7 +100,7 @@ class App {
      *
      * @param {DOMEvent} event Abgefangenes Click-Event
      */
-    _onLinkClicked(event) {
+    /*_onLinkClicked(event) {
         // Angeklicktes Link-Element suchen, falls der Klick auf eine Element
         // innerhalb des eigentlichen Links erfolgt ist
         let target = event.target;
@@ -120,7 +120,7 @@ class App {
 
         event.preventDefault();
         this.gotoPage(pageUrl);
-    }
+    }*/
 
     /**
      * DOM Event Handler für das Popstate-Event. Dieses wird vom Browser immer
