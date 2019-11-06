@@ -18,6 +18,21 @@ html, body {
     height: 100%;
 }
 
+/* Farbe der Angaben zu Klasse, Gewicht und Größe*/
+header{
+  color: black;
+  font-weight: bold;
+}
+
+h1 {
+  color: rgb(0,160, 69);
+  font-weight: bold;
+}
+
+h2 {
+  color: rgb(0,160,0)
+}
+
 html {
     font-family: "Rubik", sans-serif;
     font-size: 14pt;
@@ -25,7 +40,7 @@ html {
 
     /* https://pixabay.com/photos/ship-boat-lake-sailing-boat-italy-952292/ */
     background-color: black;
-    /* background-image: url(background.jpg); */
+    background-image: url(background.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -67,8 +82,8 @@ body {
 
 /* Allgemeine Darstellung der Menüzeile */
 header {
-    --text-color: white;
-    --icon-color: rgb(0, 90, 115);
+    --text-color: black;
+    --icon-color: black;
 }
 header nav {
     padding: var(--content-padding);
@@ -152,9 +167,10 @@ header .content h6 {
 }
 
 header .content h1 {
-    color: rgb(37, 88, 148);
+    color: rgb(0, 139 69);
     text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
     font-size: 150%;
+    font-family: Helvetica
 }
 
 header .content h2 {
