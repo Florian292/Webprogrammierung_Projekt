@@ -2,7 +2,7 @@
  * Stylesheet zur Klasse PageDetail: Detailseite der App
  */
  html {
-     background-image: url({IMG});
+     background-image: url(background.jpg);
  }
 
 .page-heading > div {
