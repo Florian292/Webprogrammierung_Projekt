@@ -60,6 +60,10 @@ class PageOverview {
         let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
         let alleTiere = ""; //Variable fuer gesamtes HTML der Schleife
         animals.forEach(animal => { //Schleife als Aufruf der einzelnen Datensaetze
+            if (animal.name == "dummy") {
+
+            }
+            else {
             let imageDataURI = "animals/dummy.png";
 
             if (animal.imagemime && animal.image64) {
@@ -72,6 +76,7 @@ class PageOverview {
             html = html.replace("{NAME}", animal.name);
 
             alleTiere += html; //fortlaufende Informationen in HTML-Variable
+          }
         });
 
         alleTiere += mainElement.innerHTML; //main-Bereich hinter template-tile-Bereich

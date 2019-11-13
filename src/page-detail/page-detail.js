@@ -22,6 +22,11 @@ class PageDetail {
         this._recordId = matches[1];
         this._animals = await this._app.database.getRecordById(this._recordId);
 
+        // Dummy-Daten aus DB holen
+        let dummyId = "NM8oXL8tkp7XJW486wQx";
+        this._animalDummy =  await this._app.database.getRecordById(dummyId);
+
+
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-detail/page-detail.html");
         let css = await fetch("page-detail/page-detail.css");
@@ -90,8 +95,16 @@ class PageDetail {
      */
     _onShowMoreButtonClicked() {
         //alert(this._animals.name);
-        let soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+        let soundDataURI = ``;
+
+        if (this._animals.soundmime && this._animals.sound64) {
+          soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+        }
+        else {
+          soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
+        }
         let audio = new Audio(soundDataURI);
         audio.play();
+
     }
 }

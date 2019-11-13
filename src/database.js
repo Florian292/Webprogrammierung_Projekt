@@ -137,6 +137,8 @@ class Database {
 
       return animals;
     }
+
+    // Neues Tier in DB speichern
     saveNewAnimal(newAnimal) {
       return this._animals.add(newAnimal);
     }
