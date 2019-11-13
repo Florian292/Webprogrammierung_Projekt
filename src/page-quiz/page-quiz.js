@@ -17,12 +17,20 @@ class PageQuiz {
      */
     async show(matches) {
 
-	    // zufälliges Tier auswählen
-		/*let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
-		let anzahlTiere = animals.length; //Anzahl der Tiere in DB
-		var x = Math.floor(Math.random() * (anzahlTiere)); //Zufallszahl zwischen 0 und Anzahl der Tier -1
-		let kontinent = animals[x].kontinent;
-		let animalname = animals[x].name;*/
+	      // zufälliges Tier auswählen
+		    let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
+		    let anzahlTiere = animals.length; //Anzahl der Tiere in DB
+		    var x = Math.floor(Math.random() * (anzahlTiere)); //Zufallszahl zwischen 0 und Anzahl der Tier -1
+
+        // Dummy-Datensatz rausfiltern
+        var y = true;
+        while (y == true) {
+          if (animals[x].name == "dummy") x = Math.floor(Math.random() * (anzahlTiere));
+          else y = false;
+        }
+
+		    let kontinent = animals[x].kontinent;
+		    let animalname = animals[x].name;
 
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-quiz/page-quiz.html");
@@ -36,20 +44,13 @@ class PageQuiz {
             return;
         }
 
-		// Tiername in Titel ersetzen
-    //    html = html.replace(/{TIERNAME}/g, animalname);
+		    // Tiername in Titel ersetzen
+        html = html.replace(/{TIERNAME}/g, animalname);
 
         // Seite zur Anzeige bringen
         let pageDom = document.createElement("div");
-//        html = html.replace("{TIERNAME}", animal.name);
         pageDom.innerHTML = html;
 
-/*        await this._renderAnimalTiles(pageDom);
-        let formElement = pageDom.querySelector('form');
-        formElement.addEventListener('submit', event => this.tierHinzufügen(event, this._app.database)); */
-
-        await this._getAllAnimals(html);
-        pageDom.innerHTML = html;
 
 /*
 		window.addEventListener ('load', function () {
@@ -74,20 +75,6 @@ class PageQuiz {
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
-
-    }
-
-  async  _getAllAnimals(text){
-      let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
-      let anzahlTiere = animals.length;
-      var x = Math.floor(Math.random() * (anzahlTiere));
-      let kontinent = animals[x].kontinent;
-      let animalname = animals[x].name;
-
-      text = text.replace("{TIERNAME}", animalname);
-return text;
-    //  alert(anzahlTiere);
-    //  alert(animalname);
 
     }
 

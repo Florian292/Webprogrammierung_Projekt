@@ -59,3 +59,66 @@ main > img {
     padding: 0.25em;
     background: rgb(250, 250, 250);
 }
+
+.karte {
+  position: relative;
+}
+
+.weltkarte {
+  display: block;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+.antarktis {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.australien {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.afrika {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.europa {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.asien {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.nordamerika {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.suedamerika {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
