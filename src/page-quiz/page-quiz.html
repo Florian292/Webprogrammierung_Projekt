@@ -2,52 +2,54 @@
     <div class="page-heading">
         <div>
             <h1>Wo lebt der/die/das {TIERNAME}</h1>
-
-<!--            <div class="boat-info">
-                <div class="field">
-                    <div class="label">
-                        Klasse:
-                    </div>
-                    <div class="value">
-                        {KLASSE}
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="label">
-                        Gewicht:
-                    </div>
-                    <div class="value">
-                        {GEWICHT}
-                    </div>
-                </div>
-
-                <div class="field">
-                    <div class="label">
-                        Größe:
-                    </div>
-                    <div class="value">
-                        {GRÖSSE}
-                    </div>
-                </div>
-            </div>-->
         </div>
     </div>
 </header>
 
 <main>
-    <!-- <img src="{IMG}" alt="" /> -->
 
-<!--    <p class=value>
-      <h1>Fünf interessante Fakten:</h1>
-      <ul>
-        <li>{FAKT1} </br></li>
-        <li>{FAKT2} </br></li>
-        <li>{FAKT3} </br></li>
-        <li>{FAKT4} </br></li>
-        <li>{FAKT5} </br></li>
-      </ul>
+	<div id="weltkarte"><img src="images/world.png"  alt="weltkarte" usemap="#kontinente" />
 
-    </p>
-    <button id="show-more-button">Tiersound abspielen!</button>-->
+		<map name="kontinente" id="kontis">
+			<area shape="poly" coords="494,0,400,53,436,155,459,152,495,144,505,156,545,159,538,139,553,132,577,126,607,133,608,116,606,104,616,104,619,64,625,60,630,41,616,33,622,0"
+				href="#" alt="Europa" title="Europa" onmousemove="getInfo('europe', event)" onmouseout="hideInfo('europe')" />
+          
+			<area shape="poly" coords="0,0,0,95,127,222,204,263,211,253,193,222,258,222,212,178,317,115,408,43,438,29,456,0"
+				href="#" alt="Nordamerika" title="Nordamerika" onmousemove="getInfo('nordami', event)" onmouseout="hideInfo('nordami')" />
+          
+			<area shape="poly" coords="183,298,192,326,230,486,254,507,404,421,360,277,292,248,270,243,246,238,221,234,212,253,205,271,209,271"
+				href="#" alt="Suedamerika" title="Suedamerika" onmousemove="getInfo('suedami', event)" onmouseout="hideInfo('suedami')" />
+          
+			<area shape="poly" coords="781,360,830,331,842,310,839,298,840,287,844,276,857,272,868,268,883,260,914,223,984,24,759,4,694,6,641,6,623,11,621,26,622,33,629,40,631,47,631,54,630,61,628,66,623,67,621,103,610,107,612,130,609,138,579,129,565,131,555,136,542,140,548,156,563,166,569,181,590,224,603,239"
+				href="#" alt="Asien" title="Asien" onmousemove="getInfo('asien', event)" onmouseout="hideInfo('asien')" />
+          
+			<area shape="poly" coords="398,209,398,253,423,280,458,283,472,300,500,407,538,425,608,398,633,350,632,288,627,237,604,244,587,225,579,206,570,190,565,180,562,172,560,168,551,166,538,165,525,164,514,164,506,163,502,157,497,152,493,149,482,149,473,151,466,152,455,154,445,155,437,156,426,156"
+				href="#" alt="Afrika" title="Afrika" onmousemove="getInfo('afrika', event)" onmouseout="hideInfo('afrika')" />
+          
+			<area shape="poly" coords="796,372,838,333,841,322,845,311,843,295,847,281,856,277,912,258,972,287,987,352,999,411,999,464,950,486,776,473"
+				href="#" alt="Australien" title="Australien" onmousemove="getInfo('australien', event)" onmouseout="hideInfo('australien')" />
+          
+			<area shape="poly" coords="172,581,119,559,191,542,290,535,320,504,346,548,400,551,450,530,596,518,720,514,828,519,885,552,813,581"
+				href="#" alt="Antarktis" title="Antarktis" onmousemove="getInfo('antarktis', event)" onmouseout="hideInfo('antarktis')" />
+
+<!-- Meer einfügen wäre noch schön....-->
+				
+		</map>
+
+		<div id="europe"><a href="europe.html"><img src="images/Europa.png" alt="Europa" onmousemove="getInfo('europe', event)" onmouseout="hideInfo('europe')"/></a></div>
+		<div id="nordami"><a href="nordamerika.html"><img src="images/Nordamerika.png" alt="Nordamerika" onmousemove="getInfo('nordami', event)" onmouseout="hideInfo('nordami')"/></a></div>
+		<div id="suedami"><a href="südamerika.html"><img src="images/Suedamerika.png" alt="Suedamerika" onmousemove="getInfo('suedami', event)" onmouseout="hideInfo('suedami')"/></a></div>
+		<div id="asien"><a href="asien.html"><img src="images/Asien.png" alt="Asien" border="0" usemap="#Map" onmousemove="getInfo('asien', event)" onmouseout="hideInfo('asien')"/>
+		<map name="Map" id="Map">
+		<area shape="poly" coords="3,321,383,316,390,6,4,7,84,41,74,87,48,120,18,120,-5,131,8,156,24,171,28,188,37,204,46,218,61,235,65,239,89,240,99,236,107,226,112,210,119,206,122,204,129,209,144,227,149,243,155,257,166,271,190,277,196,265,217,261,223,271,235,291,242,304,261,315,273,320,286,322,315,301,312,283,317,266,336,256,352,248,368,222,370,192,370,168,373,148,376,116,378,96,381,84,384,72,386,55,379,36,349,28,300,23,255,27,214,24,188,21,151,17,141,12,117,17,99,26,91,38,85,51,80,77,64,114,46,121,19,123,14,129,10,144" href="#" onmousemove="hideInfo('asien')" alt="asien" />
+		</map></a></div>
+		<div id="afrika"><a href="afrika.html"><img src="images/Afrika.png" alt="Afrika" onmousemove="getInfo('afrika', event)" onmouseout="hideInfo('afrika')"/></a></div>
+		<div id="australien"><a href="australien.html"><img src="images/Australien.png" alt="Australien" onmousemove="getInfo('australien', event)" onmouseout="hideInfo('australien')"/></a></div>
+		<div id="antarktis"><img src="images/Antarktis.png" alt="Antarktis" onmousemove="getInfo('antarktis', event)" onmouseout="hideInfo('antarktis')"/></div>
+
+	</div>
+
+	<div class="value">
+		{RICHTIG}
+	</div>
 </main>
