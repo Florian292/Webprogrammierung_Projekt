@@ -6,6 +6,7 @@
  * Layout im Allgemeinen betreffend.
  */
 @import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://fonts.googleapis.com/css?family=Pangolin');
 
 /*
  * ALLGEMEINES
@@ -34,7 +35,7 @@ h2 {
 }
 
 html {
-    font-family: "Rubik", sans-serif;
+    font-family: "Pangolin", sans-serif;
     font-size: 14pt;
     line-height: 1.6;
 
@@ -84,6 +85,7 @@ body {
 header {
     --text-color: black;
     --icon-color: black;
+    font-family: "Pangolin";
 }
 header nav {
     padding: var(--content-padding);
