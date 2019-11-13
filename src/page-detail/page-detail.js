@@ -53,6 +53,7 @@ class PageDetail {
         text = text.replace(/{KLASSE}/g, this._animals.klasse);
         text = text.replace(/{GEWICHT}/g, this._animals.gewicht);
         text = text.replace(/{GRÖSSE}/g, this._animals.groesse);
+        text = text.replace(/{KONTINENT}/g, this._animals.kontinent);
         text = text.replace(/{LINK}/g, this._animals.link);
         text = text.replace(/{FAKT1}/g, this._animals.fakt1);
         text = text.replace(/{FAKT2}/g, this._animals.fakt2);

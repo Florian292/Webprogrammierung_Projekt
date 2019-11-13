@@ -19,6 +19,7 @@ class PageOverview {
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-overview/page-overview.html");
         let css = await fetch("page-overview/page-overview.css");
+        //let formcss = await fetch("elements/form.css");
 
         if (html.ok && css.ok) {
             html = await html.text();
@@ -88,6 +89,7 @@ class PageOverview {
         fakt3: event.target.fakt3.value,
         fakt4: event.target.fakt4.value,
         fakt5: event.target.fakt5.value,
+        kontinent: event.target.kontinent.value,
         image64: event.target.image64.value,
         immagemime: "image/jpeg",
         sound64: event.target.sound64.value,

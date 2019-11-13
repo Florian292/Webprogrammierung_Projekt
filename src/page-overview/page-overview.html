@@ -16,19 +16,52 @@
 <h2>Hier kannst du ein neues Tier anlegen: </h2>
 
   <form name="TierAnlegen">
-    <label><span>Name eingeben: </span><input name="name" type="text" required>
-    <span>Größe eingeben: </span><input type="text" name="groesse" value="" required>
-    <span>Gewicht eingeben: </span><input type="text" name="gewicht" value="" required><br>
-    <span>Klasse eingeben: </span><input type="text" name="klasse" value=""required>
-    <span>1. Fakt eingeben: </span><input type="text" name="fakt1" value=""required>
-    <span>2. Fakt eingeben: </span><input type="text" name="fakt2" value=""required><br>
-    <span>3. Fakt eingeben: </span><input type="text" name="fakt3" value=""required>
-    <span>4. Fakt eingeben: </span><input type="text" name="fakt4" value=""required>
-    <span>5. Fakt eingeben: </span><input type="text" name="fakt5" value=""required><br>
-    <span>jpeg-Bilddatei als base64 hochladen: </span><input type="text" name="image64" value=""required><br>
-    <span>Sounddatei als base64 hochladen: </span><input type="text" name="sound64" value=""required><br>
-    <span><input type="submit" value="Speichern"></span><br>
-    <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a></label>
+    <label>
+      <table cellspacing="15em">
+        <tr>
+          <td><span>Name eingeben: </span></td><td><input name="name" type="text" required></td>
+          <td><span>Größe eingeben: </span></td><td><input type="text" name="groesse" value="" required></td>
+        </tr>
+        <tr>
+          <td><span>Gewicht eingeben: </span></td><td><input type="text" name="gewicht" value="" required></td>
+          <td><span>Klasse eingeben: </span></td><td><input type="text" name="klasse" value=""required></td>
+        </tr>
+        <tr>
+          <td><span>1. Fakt eingeben: </span></td><td><input type="text" name="fakt1" value=""required></td>
+          <td><span>2. Fakt eingeben: </span></td><td><input type="text" name="fakt2" value=""required></td>
+        </tr>
+        <tr>
+          <td><span>3. Fakt eingeben: </span></td><td><input type="text" name="fakt3" value=""required></td>
+          <td><span>4. Fakt eingeben: </span></td><td><input type="text" name="fakt4" value=""required></td>
+        </tr>
+        <tr>
+          <td><span>5. Fakt eingeben: </span></td><td><input type="text" name="fakt5" value=""required></td>
+          <td><span>Lebensraum auswählen </span></td><td><select type="text" name="kontinent">
+              <option value="Alle">Alle</option>
+              <option value="Afrika">Afrika</option>
+              <option value="Antarktis">Antarktis</option>
+              <option value="Asien">Asien</option>
+              <option value="Australien">Australien</option>
+              <option value="Europa">Europa</option>
+              <option value="Meer">Meer</option>
+              <option value="Nordamerika">Nordamerika</option>
+              <option value="Südamerika">Südamerika</option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <td><span>jpeg-Bilddatei als base64 hochladen: </span></td><td><input type="text" name="image64" value=""required></td>
+        </tr>
+        <tr>
+          <td><span>Sounddatei als base64 hochladen: </span></td><td><input type="text" name="sound64" value=""required></td>
+        </tr>
+      </table>
+        <button type="submit"><span>Speichern</span></button>
+        <button type="reset"><span>Formular leeren</span></button>
+        <!--<a href="javascript:document.TierAnlegen.submit()">Neues Tier speichern</a>
+        <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a>-->
+    </label>
+
 </form>
 
 
