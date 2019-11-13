@@ -17,19 +17,13 @@ class PageQuiz {
      */
     async show(matches) {
 
-<<<<<<< HEAD
-        //Tier zufällig auswählen
-        //tierauswahl
-
-=======
 	    // zufälliges Tier auswählen
-		let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
+		/*let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
 		let anzahlTiere = animals.length; //Anzahl der Tiere in DB
 		var x = Math.floor(Math.random() * (anzahlTiere)); //Zufallszahl zwischen 0 und Anzahl der Tier -1
 		let kontinent = animals[x].kontinent;
-		let animalname = animals[x].name;
-		
->>>>>>> 60c309c099a3dc2a3b95616af9136d9dd789603c
+		let animalname = animals[x].name;*/
+
         // Anzuzeigenden Seiteninhalt nachladen
         let html = await fetch("page-quiz/page-quiz.html");
         let css = await fetch("page-quiz/page-quiz.css");
@@ -43,11 +37,10 @@ class PageQuiz {
         }
 
 		// Tiername in Titel ersetzen
-        html = html.replace(/{TIERNAME}/g, animalname);
+    //    html = html.replace(/{TIERNAME}/g, animalname);
 
         // Seite zur Anzeige bringen
         let pageDom = document.createElement("div");
-<<<<<<< HEAD
 //        html = html.replace("{TIERNAME}", animal.name);
         pageDom.innerHTML = html;
 
@@ -56,8 +49,6 @@ class PageQuiz {
         formElement.addEventListener('submit', event => this.tierHinzufügen(event, this._app.database)); */
 
         await this._getAllAnimals(html);
-=======
->>>>>>> 60c309c099a3dc2a3b95616af9136d9dd789603c
         pageDom.innerHTML = html;
 
 /*
@@ -86,7 +77,6 @@ class PageQuiz {
 
     }
 
-<<<<<<< HEAD
   async  _getAllAnimals(text){
       let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
       let anzahlTiere = animals.length;
@@ -106,6 +96,4 @@ return text;
         //text = text.replace(/{IMG}/g, this._animals.img);
 
 
-=======
->>>>>>> 60c309c099a3dc2a3b95616af9136d9dd789603c
 }
