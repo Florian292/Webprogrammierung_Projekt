@@ -42,9 +42,7 @@ class App {
      * index.html heraus aufgerufen werden.
      */
     run() {
-        // Globale Event Listener registrieren
-        //document.querySelector("header nav .toggle-menu a").addEventListener("click", this._toggleHamburgerMenu);
-        //document.querySelector("header nav .go-back a").addEventListener("click", () => window.history.back());
+
 
         //window.addEventListener("click", event => this._onLinkClicked(event));
         window.addEventListener("popstate", event => this._onHistoryChanged(event));
@@ -53,89 +51,8 @@ class App {
         this.gotoPage(location.hash.slice(1), {showFirstPage: true});
     }
 
-    /**
-     * Hilfsmethode zum Ein- und Ausblenden des Hamburger-Menüs aus kleinen
-     * Bildschirmen. Die Methode wird durch einen Event Handler bei jedem
-     * Klick auf das Hamburger-Icon aufgerufen.
-     *
-     * @param {DOMEvent} event Abgefangenes Click-Event
-     */
-    /*_toggleHamburgerMenu(event) {
-        // Hamburger-Menu ein- oder ausblenden
-        let menu = document.querySelector("header nav .menu-right");
-        if (!menu) return;
+  
 
-        if (menu.classList.contains("small-screen-hidden")) {
-            menu.classList.remove("small-screen-hidden");
-        } else {
-            menu.classList.add("small-screen-hidden");
-        }
-
-        // Weitere Behandlung des Click-Events unterbinden, da wir hier keine
-        // neue Seite anfordern wollen.
-        if (event) {
-            event.preventDefault();
-        }
-    }*/
-
-    /**
-     * DOM Event Handler für angeklickte Links. Tatsächlich wird der Event
-     * Handler nicht an die einzelnen Link-Elemente sondern an das übergeorndete
-     * Window angehängt, um wirklich jeden Klick auf jeden Link abfangen zu
-     * können, auch wenn der Link erst nach Registrierung des Event Handlers
-     * dynamisch erzeugt wurde.
-     *
-     * Normale URL-Links funktionieren wie gewohnt, indem sie den Browser
-     * veranlassen, eine neue URL aufzurufen. Fängt der Link jedoch mit einer
-     * Raute # an, wird stattdessen die app-interne Navigation angestoßen.
-     *
-     * Folgender Link würde daher eine vollkommen neue Webseite laden:
-     *
-     *   <a href="/goto/new/page">New Page</a>
-     *
-     * Der folgende Link hingegen würde nur innerhalb der App eine neue
-     * Unterseite aufrufen
-     *
-     *   <a href="#/Details/42/">Details zu Eintrag 42</a>
-     *
-     * @param {DOMEvent} event Abgefangenes Click-Event
-     */
-    /*_onLinkClicked(event) {
-        // Angeklicktes Link-Element suchen, falls der Klick auf eine Element
-        // innerhalb des eigentlichen Links erfolgt ist
-        let target = event.target;
-        while (target && target.nodeName != "A") target = target.parentNode;
-        if (!target || target.nodeName != "A") return;
-
-        // Aufzurufende Seite ermitteln. Hierfür muss der Link aus einem
-        // Rautezeichen und dem URL-Pattern der neuen Seite bestehen.
-        // Alle anderen Links sind gewöhnliche Links zum Aufruf einer neuen
-        // URL und werden hier deshalb nicht behandelt.
-        let href = target.getAttribute("href");
-        if (href === null || !href.startsWith("#")) return;
-
-        // Gewünschte Seite anzeigen
-        let pageUrl = target.hash.slice(1);
-        if (!pageUrl.length) return;
-
-        event.preventDefault();
-        this.gotoPage(pageUrl);
-    }*/
-
-    /**
-     * DOM Event Handler für das Popstate-Event. Dieses wird vom Browser immer
-     * dann geworfen, wenn sich die Navigationshistorie der Seite verändert
-     * hat. In der Regel passiert dies immer dann, wenn der Anwender die
-     * Vor- oder Zurück-Buttons des Browsers betätigt, oder mit JavaScript die
-     * aktuelle URL geändert wird.
-     *
-     * Innerhalb der Methode wird aus dem Historieneintrag die URL der Seite
-     * geholt und diese dann aufgerufen. Über ein Flag wird dabei sichergestellt,
-     * dass dieser Aufruf keinen neuen Historieneintrag erzeugt, da sonst die
-     * komplette Navigation durcheinander kommen würde.
-     *
-     * @param {DOMEvent} event Abgefangenes Popstate-Event
-     */
     _onHistoryChanged(event) {
         let pageUrl = "";
 

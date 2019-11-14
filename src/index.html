@@ -54,30 +54,9 @@
                 app.run();
             });
 
-/*            window.addEventListener ('load', function () {
-            var map = document.querySelectorAll('#kontinente area');
-            for (var i=0; i<map.length; i++) {
-              if (map[i].addEventListener) {
-                map[i].addEventListener('touchstart', swap, false);
-                map[i].addEventListener('mouseover', swap, false);
-                //map[i].addEventListener('mouseout', swap, false);
-              }
-            }
-
-            function swap(ev) {
-              document.getElementById(ev).style.display = 'block';
-              document.getElementById('weltkarte').style.display = 'none';
-              var lan = this.getAttribute('alt');
-              document.getElementById('weltkarte').setAttribute('src','page-quiz/images/' + lan + '.png');
-              alert("test");
-              alert('page-quiz/images/' + lan + '.png');
-              return false;
-            }
-          });*/
-
-
-function swap(ev) {
-    if (ev == undefined)
+//Funktion um Kontinente ein- und auszublenden
+function swap(konti) {
+    if (konti == undefined)
     {
       document.getElementById('australien').style.display = 'none';
       document.getElementById('antarktis').style.display = 'none';
@@ -86,12 +65,70 @@ function swap(ev) {
       document.getElementById('nordamerika').style.display = 'none';
       document.getElementById('europa').style.display = 'none';
       document.getElementById('asien').style.display = 'none';
-      //document.getElementById('weltkarte').style.display = 'block';
     }
     else {
-      document.getElementById(ev).style.display = 'block';
+      document.getElementById(konti).style.display = 'block';
     }
 };
+
+//Prueffunktionen fuer Quiz
+function pruefen(konti) {
+    let richtig = false;
+    if (konti != "Meer") richtig = true;
+    einblenden(richtig);
+};
+function apruefen(konti) {
+  let richtig = false;
+  if (konti == "Suedamerika") richtig = true;
+  einblenden(richtig);
+};
+function bpruefen(konti) {
+  let richtig = false;
+  if (konti == "Europa") richtig = true;
+  einblenden(richtig);
+};
+function cpruefen(konti) {
+  let richtig = false;
+  if (konti == "Nordamerika") richtig = true;
+  einblenden(richtig);
+};
+function dpruefen(konti) {
+  let richtig = false;
+  if (konti == "Asien") richtig = true;
+  einblenden(richtig);
+};
+function epruefen(konti) {
+  let richtig = false;
+  if (konti == "Antarktis") richtig = true;
+  einblenden(richtig);
+};
+function fpruefen(konti) {
+  let richtig = false;
+  if (konti == "Meer") richtig = true;
+  einblenden(richtig);
+};
+function gpruefen(konti) {
+  let richtig = false;
+  if (konti == "Afrika") richtig = true;
+  einblenden(richtig);
+};
+function hpruefen(konti) {
+  let richtig = false;
+  if (konti == "Australien") richtig = true;
+  einblenden(richtig);
+};
+//Ein- und Ausblendfunktion bei Antworten im Quiz
+function einblenden(test) {
+  if (test == true)  {
+    document.getElementById('richtig').style.display = 'block';
+    document.getElementById('falsch').style.display = 'none';
+  }
+  else {
+    document.getElementById('falsch').style.display = 'block';
+    document.getElementById('richtig').style.display = 'none';
+  }
+};
+
 
 
         </script>
@@ -116,27 +153,7 @@ function swap(ev) {
                     <li class="dont-go-back hidden">
                         <span class="page-name">Name der Seite</span>
                     </li>
-                    <li class="toggle-menu small-screen-only">
-                        <a href="#">
-                            <i class="icon-menu"></i>
-                        </a>
-                    </li>
                 </ul>
-                <!-- Übergreifendes App-Menü -->
-                <!-- <ul class="menu-right small-screen-hidden">
-                    <li>
-                        <a href="#/messages">
-                            <i class="icon-chat-empty"></i>
-                            <span class="small-screen-only">Benachrichtigungen</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#/profile">
-                            <i class="icon-user"></i>
-                            <span class="small-screen-only">Benutzerprofil</span>
-                        </a>
-                    </li>
-                </ul> -->
             </nav>
 
             <div class="content">

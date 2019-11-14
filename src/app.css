@@ -26,8 +26,9 @@ header{
 }
 
 h1 {
-  color: rgb(0,160, 69);
+  color: rgb(205,38, 38);
   font-weight: bold;
+  font-family: Pangolin;
 }
 
 h2 {
@@ -35,11 +36,11 @@ h2 {
 }
 
 html {
-    font-family: "Pangolin", sans-serif;
+    font-family: Pangolin, sans-serif;
     font-size: 14pt;
     line-height: 1.6;
 
-    /* https://pixabay.com/photos/ship-boat-lake-sailing-boat-italy-952292/ */
+
     background-color: black;
     background-image: url(background.jpg);
     background-size: cover;
@@ -85,7 +86,7 @@ body {
 header {
     --text-color: black;
     --icon-color: black;
-    font-family: "Pangolin";
+    font-family: Pangolin
 }
 header nav {
     padding: var(--content-padding);
@@ -172,7 +173,7 @@ header .content h1 {
     color: rgb(0, 139 69);
     text-shadow: 1px 1px 1px rgba(0,0,0, 0.2);
     font-size: 150%;
-    font-family: Helvetica
+    font-family: Pangolin
 }
 
 header .content h2 {

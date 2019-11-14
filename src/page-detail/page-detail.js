@@ -83,25 +83,27 @@ class PageDetail {
 
         // Event Handler für den Button registrieren
         pageDom.querySelectorAll(".id").forEach(e => e.textContent = this._recordId);
-        pageDom.querySelector("#show-more-button").addEventListener("click", () => this._onShowMoreButtonClicked());
+        pageDom.querySelector("#sound-button").addEventListener("click", () => this._onSoundButtonClicked());
 
         // Fertig bearbeitetes HTML-Element zurückgeben
         return pageDom;
     }
 
-    /**
-     * Beispiel für einen einfachen Event Handler, der bei Klick auf einen
-     * Button aufgerufen wird.
-     */
-    _onShowMoreButtonClicked() {
+
+     //Handler für den Button der die Tiersounds abspielt und bei ungültiger Sounddatei einen Failsound sowie einen Hinweis ausgibt
+
+    _onSoundButtonClicked() {
         //alert(this._animals.name);
         let soundDataURI = ``;
 
-        if (this._animals.soundmime && this._animals.sound64) {
-          soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+        if (/*this._animals.soundmime &&*/ this._animals.sound64.startsWith("SUQzBAA") == false) {
+          //soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+          soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
+          alert("Ups, hier ist wohl etwas schief gelaufen...");
         }
         else {
-          soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
+          //soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
+          soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
         }
         let audio = new Audio(soundDataURI);
         audio.play();

@@ -10,12 +10,19 @@ class PageQuiz {
      */
     constructor(app) {
         this._app = app;
+        this._recordId = -1;
+        this._animals = null;
     }
 
     /**
      * Seite anzeigen. Wird von der App-Klasse aufgerufen.
      */
     async show(matches) {
+
+        // URL-Parameter auswerten
+/*        this._recordId = matches[1];
+        this._recordId = matches[2];
+        this._animals = await this._app.database.getRecordById(this._recordId);*/
 
 	      // zufälliges Tier auswählen
 		    let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
@@ -46,30 +53,23 @@ class PageQuiz {
 
 		    // Tiername in Titel ersetzen
         html = html.replace(/{TIERNAME}/g, animalname);
+        html = html.replace(/{KONTINENT}/g, kontinent);
+
+        //passende Prüffunktion für Lösungskontinent wählen
+        let z = "";
+        if (kontinent == "Suedamerika") z = "a";
+        if (kontinent == "Europa") z = "b";
+        if (kontinent == "Nordamerika") z = "c";
+        if (kontinent == "Asien") z = "d";
+        if (kontinent == "Antarktis") z = "e";
+        if (kontinent == "Meer") z = "f";
+        if (kontinent == "Afrika") z = "g";
+        if (kontinent == "Australien") z = "h";
+        html = html.replace(/{PRUEFFUNKTION}/g, z+'pruefen');
 
         // Seite zur Anzeige bringen
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
-
-
-/*
-		window.addEventListener ('load', function () {
-			var map = document.querySelectorAll('#kontinente area');
-			for (var i=0; i<map.length; i++) {
-				if (map[i].addEventListener) {
-					map[i].addEventListener('touchstart', swap, false);
-					map[i].addEventListener('mouseover', swap, false);
-					//map[i].addEventListener('mouseout', swap, false);
-				}
-			}
-
-			function swap(ev) {
-				var lan = this.getAttribute('alt');
-				document.getElementById('worldmap').setAttribute('src','images/kontinente/' + lan + '.png');
-				return false;
-			}
-		});
-*/
 
         this._app.setPageTitle("Quiz", {isSubPage: true});
         this._app.setPageCss(css);
@@ -77,10 +77,5 @@ class PageQuiz {
         this._app.setPageContent(pageDom.querySelector("main"));
 
     }
-
-    /*_replaceVariables(text){
-        text = text.replace(/{NAME}/g, this._animals.name);*/
-        //text = text.replace(/{IMG}/g, this._animals.img);
-
 
 }

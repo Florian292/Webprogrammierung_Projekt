@@ -1,5 +1,5 @@
 /**
- * Stylesheet zur Klasse PageDetail: Detailseite der App
+ * Stylesheet zur Klasse PageQuiz: Quizseite der App
  */
  html {
      background-image: url(background.jpg);
@@ -21,58 +21,23 @@
     order: 2;
 }
 
-.boat-info {
-    font-size: 90%;
-}
 
-.boat-info .label {
-    color: darkgrey;
-    display: inline-block;
-}
-
-.boat-info .value {
-    display: inline-block;
-}
-
-@media (min-width: 50em) {
-    .page-heading {
-        display: flex;
-    }
-
-    .boat-info .field {
-        display: inline-block;
-        padding-right: 5em;
-    }
-}
-
-.tab-buttons {
-    margin-top: 1.5rem;
-    margin-bottom: calc(var(--content-padding) * -1);
-}
-
-main > img {
-    box-sizing: border-box;
-    width: 20em;
-    max-width: 100%;
-
-    border: 1px solid lightgrey;
-    padding: 0.25em;
-    background: rgb(250, 250, 250);
-}
-
+/* Anzeigen der Karte*/
 .karte {
   position: relative;
+  width: 1000px;
+  height: 581px;
 }
 
 .weltkarte {
+
   display: block;
   z-index: 0;
   position: absolute;
   top: 0;
   left: 0;
-
 }
-
+/* die verschiedenen Kontinente sind beim Laden ausgeblendet */
 .antarktis {
   display: none;
   z-index: 1;
@@ -120,5 +85,22 @@ main > img {
   z-index: 1;
   position: absolute;
   top: 0;
+  left: 0;
+}
+
+/* Auswertung */
+.richtig {
+  display: none;
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  top: 250px;
+  background: white;
+}
+.falsch {
+  display: none;
+  position: relative;
+  text-align: center;
+  top: 600px;
   left: 0;
 }

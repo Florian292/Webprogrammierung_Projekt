@@ -21,16 +21,16 @@
     order: 2;
 }
 
-.boat-info {
+.animals-info {
     font-size: 90%;
 }
 
-.boat-info .label {
+.animals-info .label {
     color: darkgrey;
     display: inline-block;
 }
 
-.boat-info .value {
+.animals-info .value {
     display: inline-block;
 }
 
@@ -39,7 +39,7 @@
         display: flex;
     }
 
-    .boat-info .field {
+    .animals-info .field {
         display: inline-block;
         padding-right: 5em;
     }
