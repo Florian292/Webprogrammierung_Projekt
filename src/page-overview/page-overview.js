@@ -96,14 +96,18 @@ class PageOverview {
         fakt5: event.target.fakt5.value,
         kontinent: event.target.kontinent.value,
         image64: event.target.image64.value,
-        immagemime: "image/jpeg",
+        imagemime: "image/jpeg",
         sound64: event.target.sound64.value,
         soundmime:  "audio/mpeg",
 
       };
       database.saveNewAnimal(newAnimal);
       alert('Tier gespeichert');
+      //window.reload();
       event.preventDefault();
+
+
+
 
     }
 }
