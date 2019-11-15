@@ -57,7 +57,7 @@ class PageQuiz {
 
         //passende Prüffunktion für Lösungskontinent wählen
         let z = "";
-        if (kontinent == "Suedamerika") z = "a";
+        if (kontinent == "Südamerika") z = "a";
         if (kontinent == "Europa") z = "b";
         if (kontinent == "Nordamerika") z = "c";
         if (kontinent == "Asien") z = "d";
