@@ -41,9 +41,6 @@ class PageOverview {
         this._app.setPageCss(css);
         this._app.setPageHeader(pageDom.querySelector("header"));
         this._app.setPageContent(pageDom.querySelector("main"));
-
-
-
     }
 
     /**
@@ -99,15 +96,10 @@ class PageOverview {
         imagemime: "image/jpeg",
         sound64: event.target.sound64.value,
         soundmime:  "audio/mpeg",
-
       };
       database.saveNewAnimal(newAnimal);
       alert('Tier gespeichert');
       window.location = "./#";
       event.preventDefault();
-
-
-
-
     }
 }
