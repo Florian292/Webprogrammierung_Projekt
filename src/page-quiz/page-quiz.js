@@ -19,11 +19,6 @@ class PageQuiz {
      */
     async show(matches) {
 
-        // URL-Parameter auswerten
-/*        this._recordId = matches[1];
-        this._recordId = matches[2];
-        this._animals = await this._app.database.getRecordById(this._recordId);*/
-
 	      // zufälliges Tier auswählen
 		    let animals = await this._app.database.getAllRecords(); //Array der Tiere aus DB
 		    let anzahlTiere = animals.length; //Anzahl der Tiere in DB

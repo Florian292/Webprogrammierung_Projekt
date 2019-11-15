@@ -65,5 +65,8 @@ class Database {
       return this._animals.add(newAnimal);
     }
 
-
+    // Tier in DB ändern
+    saveEditAnimal(editAnimal) {
+      return this._animals.doc(editAnimal.id).set(editAnimal);
+    }
 }

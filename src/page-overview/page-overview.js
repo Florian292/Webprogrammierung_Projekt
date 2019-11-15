@@ -66,7 +66,7 @@ class PageOverview {
             else {
             let imageDataURI = "animals/dummy.png";
 
-            if (animal.imagemime && animal.image64) {
+            if (animal.imagemime && animal.image64.startsWith('/9j/') == true ) {
               imageDataURI = `data:${animal.imagemime};base64,${animal.image64}`;
             }
 
@@ -103,7 +103,7 @@ class PageOverview {
       };
       database.saveNewAnimal(newAnimal);
       alert('Tier gespeichert');
-      //window.reload();
+      window.location = "./#";
       event.preventDefault();
 
 

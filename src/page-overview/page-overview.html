@@ -6,14 +6,14 @@
 
 
 <main>
-<table cellspacing="15em">
-  <tr>
-    <td><div><h2>Bereit für ein kleines Quiz? </h2></div></td>
-    <td><div ><a class="quiz-link" href="./#/Quiz/">Quiz starten </a></div></td>
-  </tr>
-</table>
+  <table cellspacing="15em">
+    <tr>
+      <td><div><h2>Bereit für ein kleines Quiz? </h2></div></td>
+      <td><div ><a class="quiz-link" href="./#/Quiz/">Quiz starten </a></div></td>
+    </tr>
+  </table>
 
-<h2>Hier kannst du ein neues Tier anlegen: </h2>
+  <h2>Hier kannst du ein neues Tier anlegen: </h2>
 
   <form name="TierAnlegen">
     <label>
@@ -24,13 +24,15 @@
         </tr>
         <tr>
           <td><span>Gewicht eingeben: </span></td><td><input type="text" name="gewicht" value="" required></td>
-          <!--<td><span>Klasse eingeben: </span></td><td><input type="text" name="klasse" value=""required></td>-->
           <td><span>Klasse auswählen </span></td><td><select type="text" name="klasse">
               <option value="Säugetier">Säugetier</option>
               <option value="Vogel">Vogel</option>
               <option value="Reptilie">Reptilie</option>
               <option value="Amphibie">Amphibie</option>
               <option value="Fisch">Fisch</option>
+              <option value="Insekt">Insekt</option>
+              <option value="Weichtier">Weichtier</option>
+              <option value="Spinnentier">Spinnentier</option>
           </select>
         </tr>
         <tr>
@@ -67,12 +69,9 @@
       </table>
         <button type="submit"><span>Speichern</span></button>
         <button type="reset"><span>Formular leeren</span></button>
-        <!--<a href="javascript:location.reload()">Reload</a>-->
-        <!--<a href="javascript:document.TierAnlegen.submit()">Neues Tier speichern</a>
-        <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a>-->
     </label>
 
-</form>
+  </form>
 
 
 </main>

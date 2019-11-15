@@ -23,7 +23,7 @@ class PageDetail {
         this._animals = await this._app.database.getRecordById(this._recordId);
 
         // Dummy-Daten aus DB holen
-        let dummyId = "NM8oXL8tkp7XJW486wQx";
+        let dummyId = "dummy";
         this._animalDummy =  await this._app.database.getRecordById(dummyId);
 
 
@@ -52,8 +52,14 @@ class PageDetail {
     }
 
     _replaceVariables(text){
+      let imageDataURI = "animals/dummy.png";
+      if (this._animals.imagemime && this._animals.image64.startsWith('/9j/') == true ) {
+        imageDataURI = `data:${this._animals.imagemime};base64,${this._animals.image64}`;
+      }
+
         text = text.replace(/{NAME}/g, this._animals.name);
-        //text = text.replace(/{IMG}/g, this._animals.img);
+        text = text.replace(/{ID}/g, this._recordId);
+        text = text.replace(/{IMG}/g, imageDataURI);
 
         text = text.replace(/{KLASSE}/g, this._animals.klasse);
         text = text.replace(/{GEWICHT}/g, this._animals.gewicht);
@@ -81,9 +87,12 @@ class PageDetail {
         let pageDom = document.createElement("div");
         pageDom.innerHTML = html;
 
-        // Event Handler für den Button registrieren
+        // Event Handler für den Soundbutton registrieren
         pageDom.querySelectorAll(".id").forEach(e => e.textContent = this._recordId);
         pageDom.querySelector("#sound-button").addEventListener("click", () => this._onSoundButtonClicked());
+
+        // Event Handler für den Editierbutton registrieren
+        pageDom.querySelector("#edit-button").addEventListener("click", () => window.location = "./#/Edit/" + this._recordId );
 
         // Fertig bearbeitetes HTML-Element zurückgeben
         return pageDom;

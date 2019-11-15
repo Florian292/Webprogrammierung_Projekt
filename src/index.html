@@ -24,6 +24,8 @@
         <script src="page-detail/page-detail.js"></script>
         <script src="page-not-found/page-not-found.js"></script>
         <script src="page-quiz/page-quiz.js"></script>
+        <script src="page-edit/page-edit.js"></script>
+
 
         <!-- Fontello Icon Font (generiert auf fontello.com) -->
         <link rel="stylesheet" href="fontello/css/fontello.css" />
@@ -43,8 +45,11 @@
                     url: "^/Detail/(.*)$",
                     klass: PageDetail,
                 },{
-                    url: "^/Quiz/$",
-                    klass: PageQuiz,
+                  url: "^/Quiz/$",
+                  klass: PageQuiz,
+                },{
+                  url: "^/Edit/(.*)$",
+                  klass: PageEdit,
                 },{
                     url: ".*",
                     klass: PageNotFound,

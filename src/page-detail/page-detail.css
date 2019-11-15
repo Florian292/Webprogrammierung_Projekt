@@ -6,8 +6,7 @@
  }
 
 .page-heading > div {
-    order: 1;
-    flex: 1;
+
 }
 .page-heading > img {
     box-sizing: border-box;
@@ -50,12 +49,20 @@
     margin-bottom: calc(var(--content-padding) * -1);
 }
 
-main > img {
-    box-sizing: border-box;
-    width: 20em;
-    max-width: 100%;
+.image {
+  padding-top: 15px;
+}
 
-    border: 1px solid lightgrey;
-    padding: 0.25em;
-    background: rgb(250, 250, 250);
+.image > img {
+  height: 25em;
+}
+
+.edit-link {
+  float: left;
+  text-align: right;
+
+}
+.headerBereich {
+  float: left;
+  width: 90%;
 }
