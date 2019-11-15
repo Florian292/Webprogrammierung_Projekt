@@ -1,5 +1,12 @@
 Vorlesung Webprogrammierung
 
-Hier könnte ihre Werbung stehen
+Mithilfe dieser Single Page App ist es dir möglich interessante und spannende Fakten über die verschiedensten Tiere zu erfahren. Dabei erlernst du nicht nur Wissen, mit welchem du vor deinen Freunden angeben kannst, sondern kannst sogar selbst neuer Tier erstellen und Fakten über Diese hochladen.
 
-Test
+Damit du dies ohne Probleme machen kannst gibt es allerdings einige Dinge die du beachten solltest.
+Wenn du die Webanwendung in deinem Browser startest, gelangst du als erstes auf unsere Übersichtsseite. Dort werde dir alle bisher eingereichten Tiere mit den dazugehörigen Bildern angezeigt. Solltest du einmal eine lustige Eule sehen, dann hat ein anderer einen Fehler gemacht und vergessen ein Bild seines Tieres hochzuladen. Wir sind aber stets bemüht unser bestes für unsere Anwendung zu tun und hoffen das dies nicht vorkommt.
+
+Am unteren Ende dieser Seite siehst du ein Formular, mit welchem du ein neues Tier erstellen kannst. Dabei ist es wichtig darauf zu achten, dass manche Felder zwingend ausgefüllt sein müssen. Am besten wäre es natürlich, wenn du alle Felder mit den entsprechenden Informationen ausfüllst. Zwingend auszufüllen sind allerdings nur die Felder für den Namen, die Größe, das Gewicht, die Klasse, die fünf Fakten, sowie der Kontinent auf dem das Tier vorkommt. Das Bild und der Sound sind nicht zwingend erforderlich, aber wenn du möchtest, dass anstelle einer Eule das richtige Bild für dein Tier angezeigt wird, musst du es entsprechend hochladen. Damit wir die Daten speichern können brauchen wir von dir Diese im Base64 Format. Für die Umwandlung deines Bildes oder deiner Sound-Datei steht dir ein Link zu Verfügung, welcher dich zu einem Converter weiterleitet. Hast du nun alle Felder ausgefüllt musst du nur noch auf "Speichern" klicken und du hast ein neues Tier erstellt.
+
+Um nun die Details zu jedem einzelnen Tier aufzurufen musst du ganz einfach auf das jeweilige Bild klicken. Nun gelangst du zu den Details und den spannenden Fakten der Tiere. Wenn du nun noch erfahren möchtest welche Geräusche die einzelnen Tiere machen, dann klicke einfach auf den Button unter den Fakten und der Sound wird abgespielt. Lies dir nun die Daten und Fakten aufmerksam durch um später bei dem Quiz gut abzuschneiden.
+
+Wenn du nun Lust auf das Quiz hast, dann findest du auf der Übersichtsseite unter allen Tieren einen Button mit welchem du dorthin gelangen kannst. Dort kannst du herausfinden, ob du dir auch alles gut durchgelesen hast. Also leg doch gleich los!

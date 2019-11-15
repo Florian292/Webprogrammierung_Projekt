@@ -93,16 +93,18 @@ class PageDetail {
      //Handler für den Button der die Tiersounds abspielt und bei ungültiger Sounddatei einen Failsound sowie einen Hinweis ausgibt
 
     _onSoundButtonClicked() {
-        //alert(this._animals.name);
         let soundDataURI = ``;
 
+<<<<<<< HEAD
+        if (this._animals.sound64.startsWith("SUQzBAA") == false) {
+=======
         if (/*this._animals.soundmime &&*/ this._animals.sound64.startsWith("SUQz") == false) {
           //soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
+>>>>>>> 86c882e643219c503367f2233c7b8d1c796936d6
           soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
           alert("Ups, hier ist wohl etwas schief gelaufen...");
         }
         else {
-          //soundDataURI = `data:${this._animals.soundmime};base64,${this._animalDummy.sound64}`;
           soundDataURI = `data:${this._animals.soundmime};base64,${this._animals.sound64}`;
         }
         let audio = new Audio(soundDataURI);
