@@ -43,15 +43,13 @@ class App {
      */
     run() {
 
-
-        //window.addEventListener("click", event => this._onLinkClicked(event));
         window.addEventListener("popstate", event => this._onHistoryChanged(event));
 
         // Erste Seite aufrufen
         this.gotoPage(location.hash.slice(1), {showFirstPage: true});
     }
 
-  
+
 
     _onHistoryChanged(event) {
         let pageUrl = "";
