@@ -1,7 +1,4 @@
 <html>
-<head>
-</head>
-<body>
 <header>
     <h1>Klicke auf ein Bild um Interessantes über das abgebildete Tier zu erfahren!</h1>
 
@@ -9,9 +6,12 @@
 
 
 <main>
-
-<h2>Bereit für ein kleines Quiz? </h2>
-<a href="./#/Quiz/">Quiz starten </a>
+<table cellspacing="15em">
+  <tr>
+    <td><div><h2>Bereit für ein kleines Quiz? </h2></div></td>
+    <td><div ><a href="./#/Quiz/">Quiz starten </a></div></td>
+  </tr>
+</table>
 
 <h2>Hier kannst du ein neues Tier anlegen: </h2>
 
@@ -24,18 +24,25 @@
         </tr>
         <tr>
           <td><span>Gewicht eingeben: </span></td><td><input type="text" name="gewicht" value="" required></td>
-          <td><span>Klasse eingeben: </span></td><td><input type="text" name="klasse" value=""required></td>
+          <!--<td><span>Klasse eingeben: </span></td><td><input type="text" name="klasse" value=""required></td>-->
+          <td><span>Klasse auswählen </span></td><td><select type="text" name="klasse">
+              <option value="Säugetier">Säugetier</option>
+              <option value="Vogel">Vogel</option>
+              <option value="Reptilie">Reptilie</option>
+              <option value="Amphibie">Amphibie</option>
+              <option value="Fisch">Fisch</option>
+          </select>
         </tr>
         <tr>
-          <td><span>1. Fakt eingeben: </span></td><td><input type="text" name="fakt1" value=""required></td>
-          <td><span>2. Fakt eingeben: </span></td><td><input type="text" name="fakt2" value=""required></td>
+          <td><span>1. Fakt eingeben: </span></td><td><input type="text" name="fakt1" value=""></td>
+          <td><span>2. Fakt eingeben: </span></td><td><input type="text" name="fakt2" value=""></td>
         </tr>
         <tr>
-          <td><span>3. Fakt eingeben: </span></td><td><input type="text" name="fakt3" value=""required></td>
-          <td><span>4. Fakt eingeben: </span></td><td><input type="text" name="fakt4" value=""required></td>
+          <td><span>3. Fakt eingeben: </span></td><td><input type="text" name="fakt3" value=""></td>
+          <td><span>4. Fakt eingeben: </span></td><td><input type="text" name="fakt4" value=""></td>
         </tr>
         <tr>
-          <td><span>5. Fakt eingeben: </span></td><td><input type="text" name="fakt5" value=""required></td>
+          <td><span>5. Fakt eingeben: </span></td><td><input type="text" name="fakt5" value=""></td>
           <td><span>Lebensraum auswählen </span></td><td><select type="text" name="kontinent">
               <option value="Alle Kontinente">Alle Kontinente</option>
               <option value="Afrika">Afrika</option>
@@ -51,13 +58,16 @@
         </tr>
         <tr>
           <td><span>jpeg-Bilddatei als base64 hochladen: </span></td><td><input type="text" name="image64" value=""></td>
+          <td><a href="https://base64.guru/converter/encode/image">hier Bild konvertieren</a></td>
         </tr>
         <tr>
           <td><span>Sounddatei als base64 hochladen: </span></td><td><input type="text" name="sound64" value=""></td>
+          <td><a href="https://base64.guru/converter/encode/audio/mp3">hier Sound konvertieren</a></td>
         </tr>
       </table>
         <button type="submit"><span>Speichern</span></button>
         <button type="reset"><span>Formular leeren</span></button>
+        <!--<a href="javascript:location.reload()">Reload</a>-->
         <!--<a href="javascript:document.TierAnlegen.submit()">Neues Tier speichern</a>
         <a href="javascript:document.TierAnlegen.reset()">Formular leeren</a>-->
     </label>
@@ -76,7 +86,4 @@
         </a>
     </div>
 </div>
-
-
-</body>
 </html>
