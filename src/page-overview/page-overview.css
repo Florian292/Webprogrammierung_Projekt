@@ -8,6 +8,7 @@ html {
 
 
 
+
 .tile {
     display: inline-block;
 
@@ -18,6 +19,8 @@ html {
 
     transition: transform 0.5s, background 0.5s;
     transform: scale(1);
+    text-align: center;
+    font-weight: bold;
 }
 
 .tile img {
@@ -27,12 +30,14 @@ html {
     object-fit: cover;
     display: block;
 
+
 }
 
 .tile a,
 .tile a:visited {
     color: black;
     text-decoration: none;
+
 }
 
 .tile:hover {
@@ -40,4 +45,47 @@ html {
     transform: scale(1.01) rotate(0.5deg);
     cursor: pointer;
 
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  font-family: Pangolin;
+  font-size: 20px;
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+  background-color: rgb(250,250,210);
+  border: 1px solid;
+  outline: 0;
+  border-radius: 10px;
+}
+
+input:focus {
+  border: 2px solid;
+  border-color: green;
+}
+
+input:invalid {
+  border: 2px solid;
+  border-color: red;
+}
+select {
+  width: 200px;
+  height: 30px;
+  font-family: Pangolin;
+  font-size: 20px;
+  box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2);
+  background-color: rgb(250,250,210);
+  border: 1px solid;
+  outline: 0;
+  border-radius: 10px;
+}
+
+select:focus {
+  border: 2px solid;
+  border-color: green;
+}
+
+.quiz-link {
+  font-size: 110%;
+  font-weight: bold;
 }
